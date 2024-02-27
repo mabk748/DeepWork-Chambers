@@ -30,14 +30,18 @@
     </a-form-item>
 
     <a-form-item :wrapper-col="{ offset: 8, span: 16 }">
-      <a-button type="primary" html-type="submit">Submit</a-button>
+      <a-button type="primary" html-type="submit" style="margin:10px">Submit</a-button>
+      <a-button type="primary" html-type="submit" style="margin:10px" @click="loginstore.toggleShowLoginModal()">Sign Up</a-button>
+      <modal-sign-up />
     </a-form-item>
   </a-form>
 </template>
 
 <script lang="ts">
+import {useStore} from '@/stores/Loginstore';
 import { defineComponent, ref } from 'vue';
-import { Button, Form, InputPassword, FormItem, Input } from 'ant-design-vue';
+import { Button, Form, InputPassword, FormItem, Input, Checkbox } from 'ant-design-vue';
+import ModalSignUp from '@/components/ModalSignUp.vue';
 interface FormState {
   username: string;
   password: string;
@@ -50,9 +54,12 @@ export default defineComponent({
     AForm: Form,
     AInputPassword: InputPassword,
     AFormItem: FormItem,
-    AInput: Input
-  },
+    AInput: Input,
+    ACheckbox: Checkbox,
+    ModalSignUp
+},
   setup() {
+    const loginstore = useStore();
     const formState = ref<FormState>({
       username: '',
       password: '',
@@ -68,6 +75,7 @@ export default defineComponent({
     };
 
     return {
+      loginstore,
       formState,
       onFinish,
       onFinishFailed
