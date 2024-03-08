@@ -4,6 +4,7 @@
     <div class="Home-content-style">
       <h1>{{ pageTitle }}</h1>
       <a-button type="primary" @click="goToLogin">Get started</a-button>
+      <a-button type="primary" @click="goToAPP">Get To APP (temporary)</a-button>
     </div>
     <div class="footer">
       <p>Footer of the homepage to think about</p>
@@ -27,8 +28,11 @@ export default defineComponent({
     const goToLogin = () => {
       router.push('/login');
     };
+    const goToAPP = () => {
+      router.push('/galery');
+    };
     return {
-      goToLogin
+      goToLogin, goToAPP
     };
   },
   data() {

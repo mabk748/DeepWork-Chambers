@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import GaleryView from '../views/GaleryView.vue'
 import HomeView from '../views/HomeView.vue'
 import LoginPage from '../views/LoginView.vue';
 const routes: Array<RouteRecordRaw> = [
@@ -11,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/login',
     name:'login',
     component: LoginPage
+  },
+  {
+    path: '/galery',
+    name:'galery',
+    component: GaleryView
   },
   {
     path: '/about',
