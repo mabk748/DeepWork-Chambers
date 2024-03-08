@@ -4,7 +4,7 @@
       <div class="Navbar-components-style">
         <div class="logo">DeepWork</div>
         <a-input
-          placeholder="Rechercher..."
+          placeholder="Search..."
           style="width: 200px;"
         />
         <div style="position: absolute; right: 0px;">
